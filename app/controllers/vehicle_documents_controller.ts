@@ -86,6 +86,7 @@ export default class VehicleDocumentsController {
       .first()
     if (!doc) return response.notFound({ message: 'Documento não encontrado.' })
 
-    return response.download(app.makePath(doc.filePath), doc.fileName)
+    //return response.download(app.makePath(doc.filePath), doc.fileName)
+    return response.download(app.makePath(doc.filePath))
   }
 }
