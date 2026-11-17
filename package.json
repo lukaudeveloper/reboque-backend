@@ -4,13 +4,17 @@
   "private": true,
   "type": "module",
   "license": "MIT",
+  "import": {
+    "#controllers/*": "./app/controllers/*.js",
+    "#models/*": "./app/models/*.js"
+  },
   "exports": {
     "./data": "./.adonisjs/client/data.d.ts",
     "./registry": "./.adonisjs/client/registry/index.ts"
   },
   "scripts": {
-    "start": "node bin/server.js",
-    "build": "node ace build",
+    "start": "node build/server.js",
+    "build": "node ace build --production",
     "dev": "node ace serve --hmr",
     "test": "node ace test",
     "lint": "eslint .",
@@ -67,6 +71,7 @@
     "@vinejs/vine": "^4.3.1",
     "luxon": "^3.7.2",
     "mysql2": "^3.22.3",
+    "pg": "^8.23.1",
     "reflect-metadata": "^0.2.2"
   },
   "hotHook": {
